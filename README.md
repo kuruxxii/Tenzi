@@ -1,2 +1,2 @@
 # Tenzies
- a gmae
+ a game
