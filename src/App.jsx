@@ -34,7 +34,6 @@ export default function App() {
         if (allHeld && allSameValue) {
             setTenzies(true)
             setDuration((now() - startTime).toFixed(1))
-            setStartTime(0)
         }
     }, [dice])
 
@@ -55,16 +54,18 @@ export default function App() {
     }
     
     function rollDice() {
-        setNumOfRolls(prev => prev + 1)
         if(!tenzies) {
+            setNumOfRolls(prev => prev + 1)
             setDice(oldDice => oldDice.map(die => {
                 return die.isHeld ? 
                     die :
                     generateNewDie()
             }))
         } else {
-            setNumOfRolls(0)
             setTenzies(false)
+            setNumOfRolls(0)
+            setStartTime(0)
+            setNumOfClicks(0)
             setDice(allNewDice())
         }
     }
