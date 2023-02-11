@@ -41,11 +41,6 @@ export default function App() {
         return newDice
     }
     
-/**
- * Challenge: Allow the user to play a new game when the
- * button is clicked and they've already won
- */
-    
     function rollDice() {
         if(!tenzies) {
             setDice(oldDice => oldDice.map(die => {
