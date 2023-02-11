@@ -5,14 +5,6 @@ import {nanoid} from "nanoid"
 import Confetti from "react-confetti"
 
 export default function App() {
-    
-    /* 
-    possible expansions:
-    - CSS: put real dots on the dice
-    - track the number of rolls
-    - track the time it took to win
-    - save your best time to local storage
-    */
 
     const [startTime, setStartTime] = React.useState(0)
     const [duration, setDuration] = React.useState("")
