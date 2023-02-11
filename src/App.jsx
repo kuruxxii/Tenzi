@@ -14,10 +14,18 @@ export default function App() {
     - save your best time to local storage
     */
 
-    const [dice, setDice] = React.useState(allNewDice())
+    const [startTime, setStartTime] = React.useState(0)
+    const [duration, setDuration] = React.useState("")
     const [tenzies, setTenzies] = React.useState(false)
+    const [dice, setDice] = React.useState(allNewDice())
+    const [numOfClicks, setNumOfClicks] = React.useState(0)
     const [numOfRolls, setNumOfRolls] = React.useState(0)
-    
+
+    function now() {
+        let moment = new Date()
+        return moment.getTime() / 1000 // typeof now() => number
+    }
+
     // is this game won?
     React.useEffect(() => {
         const allHeld = dice.every(die => die.isHeld)
@@ -25,6 +33,8 @@ export default function App() {
         const allSameValue = dice.every(die => die.value === firstValue)
         if (allHeld && allSameValue) {
             setTenzies(true)
+            setDuration((now() - startTime).toFixed(1))
+            setStartTime(0)
         }
     }, [dice])
 
@@ -60,6 +70,10 @@ export default function App() {
     }
     
     function holdDice(id) {
+        if (numOfClicks === 0) {
+            setStartTime(now())
+        }
+        setNumOfClicks(prev => prev + 1)
         setDice(oldDice => oldDice.map(die => {
             return die.id === id ? 
                 {...die, isHeld: !die.isHeld} :
@@ -79,7 +93,7 @@ export default function App() {
     return (
         <main>
             {tenzies && <Confetti />}
-            {tenzies && <Dashboard numOfRolls={numOfRolls} />}
+            {tenzies && <Dashboard numOfRolls={numOfRolls} duration={duration}/>}
             <h1 className="title">Tenzies</h1>
             <p className="instructions">Roll until all dice are the same. 
             Click each die to freeze it at its current value between rolls.</p>
