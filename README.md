@@ -1,3 +1,2 @@
 # Tenzies
- a game
- https://zhtenzies.netlify.app
+https://zhtenzies.netlify.app
