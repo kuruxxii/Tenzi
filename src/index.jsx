@@ -1,5 +1,9 @@
-import React from 'react'
-import ReactDOM from "react-dom"
-import App from './App'
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App";
+import "../src/style.css";
 
-ReactDOM.render(<App />, document.getElementById("root"))
+// ReactDOM.render is no longer supported in React 18. Use createRoot instead.
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<App />);
