@@ -1,9 +1,9 @@
 import React from "react";
+import Scoreboard from "./components/Scoreboard";
 import Footer from "./components/Footer";
 import Die from "./components/Die";
 import { nanoid } from "nanoid";
 import ReactConfetti from "react-confetti";
-import Scoreboard from "./components/Scoreboard";
 
 export default function App() {
   // Create state to hold our array of numbers
