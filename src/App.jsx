@@ -170,7 +170,7 @@ export default function App() {
         {!tenzies && (
           <p className="instructions">
             - Roll until all dice are the same
-            <br />- Click a die to freeze it between rolls.
+            <br />- Click a die to freeze it between rolls
           </p>
         )}
         {tenzies && <p className="winner gradient-text"> YOU WON!</p>}
