@@ -5,7 +5,7 @@
 2. Click a die to freeze it between rolls.
 
 ## Play Tenzi Online
-
+https://playtenzionline.netlify.app/
 
 ## Screenshots
 ![Screenshot 2024-07-03 at 2 22 52 PM](https://github.com/kuruxxii/Tenzi/assets/93859201/4ba0ebe4-4756-481e-b505-4cac2369a42d)
