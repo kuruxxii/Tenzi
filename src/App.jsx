@@ -1,5 +1,4 @@
 import React from "react";
-import Scoreboard from "./components/Scoreboard";
 import Footer from "./components/Footer";
 import Die from "./components/Die";
 import { nanoid } from "nanoid";
@@ -195,7 +194,19 @@ export default function App() {
           {tenzies ? "New game" : "Roll"}
         </button>
 
-        <Scoreboard bestRolls={bestRolls} bestTime={bestTime} />
+        <div className="Scoreboard">
+          <div className="stats-container">
+            <div className="rolls-best">
+              <p>Best rolls</p>
+              <p className="gradient-text">{bestRolls}</p>
+            </div>
+            <div className="time-best">
+              <p>Best time</p>
+              {/* Convert milliseconds in seconds */}
+              <p className="gradient-text">{bestTime / 100}s</p>
+            </div>
+          </div>
+        </div>
       </main>
       <Footer />
     </div>
