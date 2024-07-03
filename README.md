@@ -1,7 +1,7 @@
 # Tenzi
 
 ## Instructions
-1. Roll until all dice are the same
+1. Roll until all dice are the same.
 2. Click a die to freeze it between rolls.
 
 ## Play Tenzi Online
